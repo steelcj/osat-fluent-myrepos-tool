@@ -22,6 +22,7 @@ Add the following to the `[DEFAULT]` section of `~/.mrconfig`. Continuation line
 
 ```ini
 [DEFAULT]
+
 # Work commit: batch-safe. Refuses when a version bump of either scope is in flight.
 git_wcommit =
 	if git status --porcelain | grep -qE '[ /]VERSION$'; then
@@ -44,6 +45,29 @@ git_park =
 	test -n "$(git status --porcelain -- ROADMAP.md)" || { echo "park refused in $MR_REPO: ROADMAP.md unchanged" >&2; exit 1; }
 	git add .
 	git commit -m "park: ${1:?usage: mr park '<what was parked>'}" -m "$(git status)"
+
+checkout = git clone "$MR_REPO" "$MR_REPO_BASENAME"
+
+update = git pull --ff-only
+
+status = git status --short --branch
+
+diff = git diff
+
+push = git push
+
+clean = git clean -fd
+
+branches = git branch -vv
+
+fetch = git fetch --all --prune
+
+log = git log --oneline --decorate --graph -10
+
+remote = git remote -v
+
+gc = git gc
+
 ```
 
 ## How the guards enforce the typology
