@@ -7,6 +7,8 @@ N` file and the git tags. Dates are ISO 8601.
 
 ## [Unreleased]
 
+- commited and pushed fairy files
+
 ## [0.2.0] - 2026-08-03
 
 ### Added
