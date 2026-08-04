@@ -3,11 +3,46 @@
 Version: 0.1.0
 Status: Draft
 
+## Description
+
+### Why use an osat-fluent installer?
+
+osat-fluent installers are designed to be as useful as possible without being invasive.
+
+Many of the cross platform agnostic as possible. In addition they install the target package 
+
+Installs and maintains 
+
 A user-space manager for [myrepos](https://myrepos.branchable.com/) (`mr`), part of the OS Sovereign Autonomous Tools (OSAT) Fluent collection.
+
+
 
 This manager installs versioned, self-contained myrepos artifacts to `~/.local/share/myrepos-tool/<version>/`, activated through a single env file and generated wrapper scripts for `mr` and `webcheckout`. Full documentation lives in [docs/en/README.md](docs/en/README.md).
 
-## Quick start
+## Installation
+
+Create the directory you want to keep your installers in:
+
+```bash
+mkdir ~/areas/development
+cd ~/areas/development
+```
+
+### Clone the installer
+
+For usage only
+
+```bash
+git clone https://github.com/steelcj/osat-fluent-myrepos-tool.git
+```
+
+If you want to develop
+
+```bash
+git clone git@github.com:steelcj/osat-fluent-myrepos-tool.git
+```
+
+Install
 
 ```bash
 python3 install-myrepos.py --install
