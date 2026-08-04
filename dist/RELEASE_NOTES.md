@@ -1,3 +1,0 @@
-### Added
-
-- File Fairy payload
